@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Об'єкт Cat</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Об'єкт кота
+        const cat = {
+            name: 'Хмаринка',
+            weight: 4.5,
+            color: 'Чорний',
+            age: 3,
+            say_meu: function () {
+                const meuElement = document.getElementById('meuMessage');
+                meuElement.innerText = 'Мяу!';
+                meuElement.style.display = 'block';
+                setTimeout(() => { meuElement.style.display = 'none'; }, 2000); // Показує "Мяу!" 2 секунди
+            },
+            updateCat: function (newName, newWeight, newColor, newAge) {
+                if (newName) this.name = newName;
+                if (newWeight > 0) this.weight = newWeight;
+                if (newColor) this.color = newColor;
+                if (newAge > 0) this.age = newAge;
+            },
+            getInfo: function () {
+                return `Мене звати ${this.name}, я важу ${this.weight} кг, мій колір шерсті - ${this.color}, мені ${this.age} роки!`;
+            }
+        };
+
+        // Оновлення інформації про кота
+        function updateCatInfo() {
+            const newName = document.getElementById('catName').value.trim();
+            const newWeight = parseFloat(document.getElementById('catWeight').value);
+            const newColor = document.getElementById('catColor').value.trim();
+            const newAge = parseInt(document.getElementById('catAge').value, 10);
+
+            cat.updateCat(newName, newWeight, newColor, newAge);
+            displayCatInfo();
+        }
+
+        // Виведення інформації про кота
+        function displayCatInfo() {
+            document.getElementById('catInfo').innerText = cat.getInfo();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Об'єкт Cat</h1>
+        <div id="catInfo"></div>
+        <h2>Оновити дані кота</h2>
+        <input type="text" id="catName" placeholder="Ім'я кота">
+        <input type="number" id="catWeight" placeholder="Вага кота (кг)">
+        <input type="text" id="catColor" placeholder="Колір кота">
+        <input type="number" id="catAge" placeholder="Вік кота (років)">
+        <button onclick="updateCatInfo()">Оновити кота</button>
+        <button onclick="cat.say_meu()">Сказати Мяу</button>
+        <div id="meuMessage" style="display: none; margin-top: 10px; font-size: 20px; color: #00796b;"></div>
+    </div>
+    <div class="footer">Okichi</div>
+</body>
+</html>

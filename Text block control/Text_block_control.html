@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Керування текстом</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Керування текстовим блоком</h1>
+        <div id="content">
+            <h2>Програмування мікроконтролерів STM32</h2>
+            <p>Мікроконтролери  STM32 здобувають все більшу популярність завдяки своїй потужності, досить різнорідної периферії,
+                 та своєї гнучкості. Ми почнемо вивчати STM32F103C8T6, використовуючи бюджетну тестову плату, вартість якої не перевищує 2$
+                  (у китайців). Ще нам знадобиться ST-Link програматор, вартість якого близько 2.5$ (у китайців). Такі суми витрат доступні
+                   і студентам і школярам, тому саме з такого бюджетного варіанту я і пропоную почати..</p>
+        </div>
+        <button id="hide">Приховати</button>
+        <button id="show">Показати</button>
+        <button id="toggle">Перемикати</button>
+    </div>
+    <div class="footer">Okichi</div>
+    <script>
+        $(document).ready(function () {
+            $('#hide').click(() => $('#content p').fadeOut());
+            $('#show').click(() => $('#content p').fadeIn());
+            $('#toggle').click(() => $('#content p').fadeToggle());
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* Основний стиль сторінки */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Ніжно-блакитний фон */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Центрування всіх елементів */
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Стиль заголовків */
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Стиль кнопок */
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    background-color: #00796b;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* Поля вводу */
+input, textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 400px;
+    font-size: 14px;
+}
+
+/* Стиль підпису внизу */
+.footer {
+    position: fixed;
+    bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
